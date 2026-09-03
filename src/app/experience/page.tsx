@@ -10,16 +10,20 @@ export default function ExperiencePage() {
 
   return (
     <div>
+      <p className="tech-label font-mono">Milestones & History</p>
       <h1>Technical Experience</h1>
       <p>Academic milestones, engineering projects, and open source development history.</p>
 
-      <div>
+      <div style={{ marginTop: '2.5rem' }}>
         {experience.map((exp, idx) => (
-          <article key={idx}>
+          <article key={idx} style={{ marginBottom: '2.5rem' }}>
             <h2>{exp.role}</h2>
-            <p><strong>{exp.organization}</strong> · <small>{exp.period} · {exp.location}</small></p>
-            <p>{exp.description}</p>
-            <h3>Key Contributions</h3>
+            <p>
+              <strong>{exp.organization}</strong> ·{' '}
+              <small className="font-mono stack-tag">{exp.period} · {exp.location}</small>
+            </p>
+            <p style={{ marginTop: '0.75rem' }}>{exp.description}</p>
+            <h3 style={{ fontSize: '1rem', marginTop: '1rem' }}>Key Contributions</h3>
             <ul>
               {exp.achievements.map((item, aIdx) => (
                 <li key={aIdx}>{item}</li>

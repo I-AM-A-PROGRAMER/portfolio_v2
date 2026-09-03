@@ -10,22 +10,22 @@ export default function ActivityPage() {
 
   return (
     <div>
+      <p className="tech-label font-mono">Metrics & Integrations</p>
       <h1>Engineering Activity</h1>
       <p>Verifiable activity metrics across open source development and algorithmic practice.</p>
 
-      <section aria-labelledby="github-activity-heading">
+      <section aria-labelledby="github-activity-heading" style={{ marginTop: '2.5rem' }}>
         <h2 id="github-activity-heading">GitHub Activity</h2>
         <p>
-          Primary Profile: <a href={identity.github} target="_blank" rel="noreferrer">{identity.github}</a>
+          Primary Profile: <a href={identity.github} target="_blank" rel="noreferrer" className="font-mono">{identity.github}</a>
         </p>
-        <div>
+        <div style={{ marginTop: '1rem' }}>
           <h3>Public Repositories & Contributions</h3>
-          <p>
+          <p className="font-mono" style={{ color: 'var(--text-muted)' }}>
             [Phase 4 Integration Target: Live GitHub GraphQL contribution graph, repository counts, language distribution, and commit history]
           </p>
           <ul>
-            <li>Primary Account: <a href={identity.github} target="_blank" rel="noreferrer">github.com/RiyoSup</a></li>
-            <li>Alternate / Organization Repositories: <a href={identity.githubAlternate} target="_blank" rel="noreferrer">github.com/I-AM-A-PROGRAMER</a></li>
+            <li>Profile & Repositories: <a href={identity.github} target="_blank" rel="noreferrer" className="font-mono">github.com/I-AM-A-PROGRAMER</a></li>
           </ul>
         </div>
       </section>
@@ -34,7 +34,7 @@ export default function ActivityPage() {
 
       <section aria-labelledby="leetcode-activity-heading">
         <h2 id="leetcode-activity-heading">LeetCode Consistency & Practice</h2>
-        <p>
+        <p className="font-mono" style={{ color: 'var(--text-muted)' }}>
           [Phase 5 Integration Target: Live LeetCode problem breakdown (Easy / Medium / Hard), active streak, and submission frequency]
         </p>
         <p>

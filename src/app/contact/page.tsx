@@ -10,25 +10,28 @@ export default function ContactPage() {
 
   return (
     <div>
+      <p className="tech-label font-mono">Direct Communication</p>
       <h1>Contact</h1>
       <p>Direct communication channels for engineering roles, project collaboration, or technical discussions.</p>
 
-      <ul>
-        <li>
-          <strong>Email:</strong>{' '}
-          <a href={'mailto:' + identity.email}>{identity.email}</a>
+      <ul style={{ marginTop: '2rem', listStyle: 'none', marginLeft: 0 }}>
+        <li style={{ marginBottom: '1rem' }}>
+          <strong className="tech-label font-mono">Email: </strong>
+          <a href={'mailto:' + identity.email} className="font-mono">{identity.email}</a>
         </li>
-        <li>
-          <strong>GitHub:</strong>{' '}
-          <a href={identity.github} target="_blank" rel="noreferrer">{identity.github}</a>
+        <li style={{ marginBottom: '1rem' }}>
+          <strong className="tech-label font-mono">GitHub: </strong>
+          <a href={identity.github} target="_blank" rel="noreferrer" className="font-mono">{identity.github}</a>
         </li>
-        <li>
-          <strong>LinkedIn:</strong>{' '}
-          <a href={identity.linkedin} target="_blank" rel="noreferrer">{identity.linkedin}</a>
+        <li style={{ marginBottom: '1rem' }}>
+          <strong className="tech-label font-mono">LinkedIn: </strong>
+          <a href={identity.linkedin} target="_blank" rel="noreferrer" className="font-mono">{identity.linkedin}</a>
         </li>
       </ul>
 
-      <p><small>No contact form without a verified backend; all links open direct communication.</small></p>
+      <p style={{ marginTop: '2rem' }}>
+        <small className="font-mono stack-tag">Direct links only; no unverified web forms.</small>
+      </p>
     </div>
   );
 }

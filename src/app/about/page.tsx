@@ -11,10 +11,11 @@ export default function AboutPage() {
 
   return (
     <div>
+      <p className="tech-label font-mono">Background & Systems</p>
       <h1>About {identity.name}</h1>
-      <p><small>{identity.alias} · {identity.location}</small></p>
+      <p className="font-mono stack-tag"><small>{identity.alias} · {identity.location}</small></p>
 
-      <section>
+      <section style={{ marginTop: '2rem' }}>
         <h2>Background</h2>
         <p>{identity.summary}</p>
         <p>
@@ -22,7 +23,7 @@ export default function AboutPage() {
         </p>
       </section>
 
-      <section>
+      <section style={{ marginTop: '2rem' }}>
         <h2>Engineering Philosophy</h2>
         <ul>
           <li><strong>Proof over claims:</strong> Working code, reproducible builds, and measurable latency reductions define technical quality.</li>
@@ -31,21 +32,22 @@ export default function AboutPage() {
         </ul>
       </section>
 
-      <section>
+      <section style={{ marginTop: '2rem' }}>
         <h2>Technical Stack</h2>
         {Object.entries(skills).map(([category, items]) => (
-          <div key={category}>
-            <strong>{category}:</strong> {items.join(' · ')}
+          <div key={category} style={{ marginBottom: '0.75rem' }}>
+            <strong className="tech-label font-mono">{category}: </strong>
+            <span className="font-mono stack-tag">{items.join(' · ')}</span>
           </div>
         ))}
       </section>
 
-      <section>
+      <section style={{ marginTop: '2rem' }}>
         <h2>Profiles</h2>
         <p>
-          <a href={identity.github} target="_blank" rel="noreferrer">GitHub</a> ·{' '}
-          <a href={identity.linkedin} target="_blank" rel="noreferrer">LinkedIn</a> ·{' '}
-          <Link href="/resume">Resume</Link>
+          <a href={identity.github} target="_blank" rel="noreferrer" className="font-mono">GitHub</a> ·{' '}
+          <a href={identity.linkedin} target="_blank" rel="noreferrer" className="font-mono">LinkedIn</a> ·{' '}
+          <Link href="/resume" className="font-mono">Resume</Link>
         </p>
       </section>
     </div>

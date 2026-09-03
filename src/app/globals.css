@@ -1,0 +1,225 @@
+/* Onyx Engineering / Editorial Design System Tokens (DESIGN.md §2 & §5) */
+:root {
+  /* Core Palette */
+  --bg: #0D0D0D;
+  --bg-elevated: #151515;
+  --bg-panel: #1A1A1B;
+  --border: #2A2A2C;
+  --border-subtle: #1F1F21;
+
+  /* Typography Colors */
+  --text-primary: #F2F0EA;
+  --text-muted: #8A8A8F;
+
+  /* Single Accent: Cobalt / Electric Blue */
+  --accent: #3B82F6;
+  --accent-hover: #60A5FA;
+  --accent-subtle: rgba(59, 130, 246, 0.12);
+
+  /* Typography Scale */
+  --font-size-label: 0.75rem;    /* 12px */
+  --font-size-mono: 0.875rem;     /* 14px */
+  --font-size-body: 1rem;         /* 16px */
+  --font-size-h3: 1.25rem;        /* 20px */
+  --font-size-h2: 1.75rem;        /* 28px */
+  --font-size-h1: 2.75rem;        /* 44px */
+
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.6;
+  --line-height-loose: 1.75;
+}
+
+/* Reset & Base Rules */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 16px;
+  line-height: var(--line-height-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Typography Rules */
+h1 {
+  font-size: var(--font-size-h1);
+  font-weight: 600;
+  line-height: var(--line-height-tight);
+  color: var(--text-primary);
+  letter-spacing: -0.025em;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  font-weight: 600;
+  line-height: var(--line-height-tight);
+  color: var(--text-primary);
+  letter-spacing: -0.015em;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+  font-weight: 500;
+  line-height: var(--line-height-tight);
+  color: var(--text-primary);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+h4 {
+  font-size: var(--font-size-body);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+p {
+  color: var(--text-primary);
+  max-width: 68ch;
+  margin-bottom: 1rem;
+}
+
+small {
+  font-size: var(--font-size-mono);
+  color: var(--text-muted);
+}
+
+strong, b {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Links */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Monospace specification (DESIGN.md §5) */
+/* Reserved for dates, metadata, stack tags, repository information, small technical labels */
+.font-mono,
+code,
+kbd,
+pre,
+.meta-tag,
+.stack-tag,
+.tech-label {
+  font-family: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.tech-label {
+  font-size: var(--font-size-label);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.stack-tag {
+  font-size: var(--font-size-mono);
+  color: var(--text-muted);
+}
+
+/* Dividers */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2.5rem 0;
+}
+
+/* Lists */
+ul, ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1.25rem;
+  max-width: 68ch;
+}
+
+li {
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+/* Base Structural Wrapper (keeping unstyled layout from Phase 1, just applying tokens) */
+.site-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  width: 100%;
+}
+
+header.site-header {
+  border-bottom: 1px solid var(--border);
+  padding: 1.5rem 0;
+  margin-bottom: 3rem;
+}
+
+header.site-header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+header.site-header nav ul {
+  display: flex;
+  gap: 1.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header.site-header nav ul li a {
+  color: var(--text-muted);
+  font-size: var(--font-size-mono);
+}
+
+header.site-header nav ul li a:hover {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+footer.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem 0;
+  margin-top: 4rem;
+  color: var(--text-muted);
+  font-size: var(--font-size-mono);
+}
+
+footer.site-footer a {
+  color: var(--text-muted);
+}
+
+footer.site-footer a:hover {
+  color: var(--accent);
+}

@@ -6,9 +6,8 @@ export const portfolio = {
     "positioning": "Building systems, backend architectures, and developer tools with deterministic outcomes.",
     "summary": "Developer focused on systems engineering, distributed architectures, performance tooling, and web applications. Emphasizes clean code, verifiable outcomes, and pragmatic engineering.",
     "location": "Bhubaneswar, India",
-    "github": "https://github.com/RiyoSup",
-    "githubAlternate": "https://github.com/I-AM-A-PROGRAMER",
-    "linkedin": "https://linkedin.com/in/supriyopramanik",
+    "github": "https://github.com/I-AM-A-PROGRAMER",
+    "linkedin": "https://www.linkedin.com/in/supriyopramanik/",
     "email": "supriyo3606c@gmail.com"
   },
   "skills": {
@@ -93,7 +92,7 @@ export const portfolio = {
         "Algorithms",
         "Web Workers"
       ],
-      "github": "https://github.com/RiyoSup/villager-roll",
+      "github": "https://github.com/I-AM-A-PROGRAMER/villager-roll",
       "liveUrl": "https://villageroll.com",
       "overview": "A high-precision utility for Minecraft Java Edition players that predicts and tracks villager trade roll sequences from world seeds without brute-force guesswork.",
       "problem": "Players spend hours breaking and placing lecterns blindly trying to obtain rare enchanted books like Mending, without knowing how many rolls they are away from their target trade.",
@@ -122,7 +121,7 @@ export const portfolio = {
         "TCP/IP",
         "Linux"
       ],
-      "github": "https://github.com/RiyoSup/network-traffic-suite",
+      "github": "https://github.com/I-AM-A-PROGRAMER/network-traffic-suite",
       "liveUrl": null,
       "overview": "A network layer stress and protocol resilience testbed designed to measure edge server throughput, connection drop rates, and proxy resistance under sustained traffic loads.",
       "problem": "Understanding how edge servers, proxies, and load balancers degrade under concurrent socket saturation requires low-level socket instrumentation without the synthetic overhead of bloated GUI test suites.",

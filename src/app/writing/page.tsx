@@ -10,16 +10,19 @@ export default function WritingPage() {
 
   return (
     <div>
+      <p className="tech-label font-mono">Articles & Notes</p>
       <h1>Technical Notes & Writeups</h1>
       <p>Analysis of systems decisions, algorithms, and performance tradeoffs.</p>
 
-      <div>
+      <div style={{ marginTop: '2.5rem' }}>
         {writing.map((post) => (
-          <article key={post.slug}>
+          <article key={post.slug} style={{ marginBottom: '3rem' }}>
             <h2>{post.title}</h2>
-            <p><small>{post.date} · {post.readTime}</small></p>
-            <p>{post.excerpt}</p>
-            <p>{post.content}</p>
+            <p className="font-mono stack-tag" style={{ margin: '0.25rem 0 1rem' }}>
+              <small>{post.date} · {post.readTime}</small>
+            </p>
+            <p><strong>Summary:</strong> {post.excerpt}</p>
+            <p style={{ marginTop: '0.75rem' }}>{post.content}</p>
           </article>
         ))}
       </div>
