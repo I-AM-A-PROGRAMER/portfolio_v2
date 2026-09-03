@@ -1,0 +1,72 @@
+{
+  "next.config.mjs": {
+    "mtime": 1788411967.8218164,
+    "ast_hash": "9244ec8688b5b15c856c3cc597aba46c",
+    "semantic_hash": "9244ec8688b5b15c856c3cc597aba46c"
+  },
+  "package.json": {
+    "mtime": 1788411919.664404,
+    "ast_hash": "7f2904dcfbd6785036a0d52063674cfd",
+    "semantic_hash": "7f2904dcfbd6785036a0d52063674cfd"
+  },
+  "src/app/about/page.tsx": {
+    "mtime": 1788412413.0014284,
+    "ast_hash": "4872af064c98269fb1de9ff460b8126e",
+    "semantic_hash": "4872af064c98269fb1de9ff460b8126e"
+  },
+  "src/app/activity/page.tsx": {
+    "mtime": 1788412413.0052147,
+    "ast_hash": "b2b7eac381fe1942d19a36944b2b0d18",
+    "semantic_hash": "b2b7eac381fe1942d19a36944b2b0d18"
+  },
+  "src/app/contact/page.tsx": {
+    "mtime": 1788412413.0075765,
+    "ast_hash": "57e61946e2f31153a19a875cfe4f63fa",
+    "semantic_hash": "57e61946e2f31153a19a875cfe4f63fa"
+  },
+  "src/app/experience/page.tsx": {
+    "mtime": 1788412413.004158,
+    "ast_hash": "4f020890c81caf655003aa73131bd385",
+    "semantic_hash": "4f020890c81caf655003aa73131bd385"
+  },
+  "src/app/layout.tsx": {
+    "mtime": 1788412412.9939616,
+    "ast_hash": "a54e1d7b5e9ac6c5169f78adb9c05ade",
+    "semantic_hash": "a54e1d7b5e9ac6c5169f78adb9c05ade"
+  },
+  "src/app/page.tsx": {
+    "mtime": 1788412412.9988682,
+    "ast_hash": "b9836a779c3ed6625ce32cfd5ac504f9",
+    "semantic_hash": "b9836a779c3ed6625ce32cfd5ac504f9"
+  },
+  "src/app/projects/[slug]/page.tsx": {
+    "mtime": 1788412413.000732,
+    "ast_hash": "8056b33b58552a2778ba61626a51f465",
+    "semantic_hash": "8056b33b58552a2778ba61626a51f465"
+  },
+  "src/app/projects/page.tsx": {
+    "mtime": 1788412413.0002248,
+    "ast_hash": "11339d05f02a0552b5f1f8d16e176407",
+    "semantic_hash": "11339d05f02a0552b5f1f8d16e176407"
+  },
+  "src/app/resume/page.tsx": {
+    "mtime": 1788412413.0070672,
+    "ast_hash": "acf7f9fd63935a1b54423a2e8c07872e",
+    "semantic_hash": "acf7f9fd63935a1b54423a2e8c07872e"
+  },
+  "src/app/writing/page.tsx": {
+    "mtime": 1788412413.0060313,
+    "ast_hash": "b434a2cdb1897ae113dd83b548a54521",
+    "semantic_hash": "b434a2cdb1897ae113dd83b548a54521"
+  },
+  "src/data/portfolio.ts": {
+    "mtime": 1788412111.1385176,
+    "ast_hash": "32a8bbb0eedd76e55a3be826b03de225",
+    "semantic_hash": "32a8bbb0eedd76e55a3be826b03de225"
+  },
+  "tsconfig.json": {
+    "mtime": 1788411957.3147814,
+    "ast_hash": "306693325a9b32ecdb0f58d7424773fa",
+    "semantic_hash": "306693325a9b32ecdb0f58d7424773fa"
+  }
+}
