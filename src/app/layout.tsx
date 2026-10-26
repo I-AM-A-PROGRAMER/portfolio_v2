@@ -32,11 +32,13 @@ export default function RootLayout({
         <div className="site-wrapper">
           <header className="site-header">
             <nav aria-label="Main Navigation">
-              <div>
-                <strong>{portfolio.identity.name}</strong>{' '}
+              <div className="nav-brand">
+                <Link href="/" style={{ color: 'var(--text-primary)', fontWeight: 600 }}>
+                  {portfolio.identity.name}
+                </Link>
                 <span className="font-mono stack-tag">({portfolio.identity.alias})</span>
               </div>
-              <ul>
+              <ul className="nav-links">
                 <li><Link href="/">Home</Link></li>
                 <li><Link href="/projects">Projects</Link></li>
                 <li><Link href="/activity">Activity</Link></li>
@@ -54,12 +56,16 @@ export default function RootLayout({
           </main>
 
           <footer className="site-footer">
-            <p>
-              {portfolio.identity.name} —{' '}
-              <a href={portfolio.identity.github} target="_blank" rel="noreferrer">GitHub</a> ·{' '}
-              <a href={portfolio.identity.linkedin} target="_blank" rel="noreferrer">LinkedIn</a> ·{' '}
-              <a href={'mailto:' + portfolio.identity.email}>Email</a>
-            </p>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+              <p style={{ margin: 0 }}>
+                {portfolio.identity.name} · <span className="font-mono">{portfolio.identity.role}</span>
+              </p>
+              <p style={{ margin: 0 }} className="font-mono">
+                <a href={portfolio.identity.github} target="_blank" rel="noreferrer">GitHub</a> ·{' '}
+                <a href={portfolio.identity.linkedin} target="_blank" rel="noreferrer">LinkedIn</a> ·{' '}
+                <a href={'mailto:' + portfolio.identity.email}>Email</a>
+              </p>
+            </div>
           </footer>
         </div>
       </body>

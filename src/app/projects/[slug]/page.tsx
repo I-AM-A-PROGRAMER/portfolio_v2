@@ -21,82 +21,107 @@ export default async function ProjectCaseStudyPage({ params }: Props) {
   }
 
   return (
-    <article>
-      <header>
-        <p><Link href="/projects" className="font-mono">← Back to Projects</Link></p>
-        <p className="tech-label font-mono" style={{ marginTop: '1.5rem' }}>Case Study</p>
-        <h1>{project.name}</h1>
-        <p><strong>{project.outcome}</strong></p>
-        <p className="font-mono stack-tag"><small>Ownership: {project.role}</small></p>
-        <p style={{ marginTop: '1rem' }}>
-          <a href={project.github} target="_blank" rel="noreferrer" className="font-mono">View Source on GitHub ↗</a>
-          {project.liveUrl && (
-            <> · <a href={project.liveUrl} target="_blank" rel="noreferrer" className="font-mono">Open Live Deployment ↗</a></>
-          )}
-        </p>
-      </header>
+    <div>
+      <p style={{ marginBottom: '1.5rem' }}>
+        <Link href="/projects" className="button-link font-mono" style={{ padding: '0.4rem 0.8rem' }}>
+          ← All Projects
+        </Link>
+      </p>
 
-      <hr />
+      <div className="case-study-grid">
+        {/* Sticky Sidebar: Metadata & Tech Specs */}
+        <aside className="case-study-sidebar">
+          <span className="tech-label font-mono">SPECIFICATION</span>
+          <h3 style={{ marginTop: '0.5rem', marginBottom: '1rem', fontSize: '1.15rem' }}>{project.name}</h3>
 
-      <section>
-        <h2>Overview</h2>
-        <p>{project.overview}</p>
-      </section>
+          <div style={{ marginBottom: '1.5rem' }}>
+            <span className="tech-label font-mono">OWNERSHIP</span>
+            <p className="font-mono stack-tag" style={{ fontSize: '0.85rem' }}>{project.role}</p>
+          </div>
 
-      <section>
-        <h2>Problem</h2>
-        <p>{project.problem}</p>
-      </section>
+          <div style={{ marginBottom: '1.5rem' }}>
+            <span className="tech-label font-mono">TECHNOLOGY STACK</span>
+            <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap', marginTop: '0.4rem' }}>
+              {project.stack.map((t) => (
+                <span key={t} className="skill-tag-pill font-mono" style={{ fontSize: '0.75rem' }}>{t}</span>
+              ))}
+            </div>
+          </div>
 
-      <section>
-        <h2>Solution</h2>
-        <p>{project.solution}</p>
-      </section>
+          <div style={{ borderTop: '1px solid var(--border)', paddingTop: '1rem' }}>
+            <span className="tech-label font-mono">RESOURCES</span>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginTop: '0.5rem' }}>
+              <a href={project.github} target="_blank" rel="noreferrer" className="button-link font-mono" style={{ fontSize: '0.85rem' }}>
+                GitHub Repository ↗
+              </a>
+              {project.liveUrl && (
+                <a href={project.liveUrl} target="_blank" rel="noreferrer" className="button-link font-mono button-primary" style={{ fontSize: '0.85rem' }}>
+                  Live Deployment ↗
+                </a>
+              )}
+            </div>
+          </div>
+        </aside>
 
-      <section>
-        <h2>Architecture</h2>
-        <p>{project.architecture}</p>
-      </section>
+        {/* Main Content Area */}
+        <article className="case-study-content">
+          <header style={{ marginBottom: '2.5rem' }}>
+            <span className="project-badge font-mono">ARCHITECTURAL CASE STUDY</span>
+            <h1 style={{ fontSize: '2.5rem', margin: '0.5rem 0 1rem' }}>{project.name}</h1>
+            <p style={{ fontSize: '1.2rem', color: 'var(--text-primary)', lineHeight: 1.5 }}>
+              <strong>Outcome:</strong> {project.outcome}
+            </p>
+          </header>
 
-      <section>
-        <h2>Engineering Decisions</h2>
-        <ul>
-          {project.engineeringDecisions.map((decision, idx) => (
-            <li key={idx}>{decision}</li>
-          ))}
-        </ul>
-      </section>
+          <section>
+            <h2>Overview</h2>
+            <p>{project.overview}</p>
+          </section>
 
-      <section>
-        <h2>Challenges & Tradeoffs</h2>
-        <ul>
-          {project.challenges.map((challenge, idx) => (
-            <li key={idx}>{challenge}</li>
-          ))}
-        </ul>
-      </section>
+          <section>
+            <h2>Problem Statement</h2>
+            <p>{project.problem}</p>
+          </section>
 
-      <section>
-        <h2>Limitations</h2>
-        <p>{project.limitations}</p>
-      </section>
+          <section>
+            <h2>Engineered Solution</h2>
+            <p>{project.solution}</p>
+          </section>
 
-      <section>
-        <h2>What I Would Improve</h2>
-        <p>{project.whatToImprove}</p>
-      </section>
+          <section>
+            <h2>Architecture & Pipeline</h2>
+            <p>{project.architecture}</p>
+          </section>
 
-      <section>
-        <h2>Technology Stack</h2>
-        <p className="font-mono stack-tag">{project.stack.join(' · ')}</p>
-      </section>
+          <section>
+            <h2>Engineering Decisions & Tradeoffs</h2>
+            <ul>
+              {project.engineeringDecisions.map((decision, idx) => (
+                <li key={idx}>{decision}</li>
+              ))}
+            </ul>
+          </section>
 
-      <section>
-        <h2>Repository Links</h2>
-        <p>
-          <a href={project.github} target="_blank" rel="noreferrer" className="font-mono">{project.github}</a>
-        </p>
-      </section>
-    </article>
+          <section>
+            <h2>Challenges Faced</h2>
+            <ul>
+              {project.challenges.map((challenge, idx) => (
+                <li key={idx}>{challenge}</li>
+              ))}
+            </ul>
+          </section>
+
+          <section>
+            <h2>Known Limitations</h2>
+            <p>{project.limitations}</p>
+          </section>
+
+          <section>
+            <h2>What I Would Improve</h2>
+            <p>{project.whatToImprove}</p>
+          </section>
+        </article>
+      </div>
+    </div>
   );
 }

@@ -1,45 +1,63 @@
 import { portfolio } from '@/data/portfolio';
+import { getGitHubStats, getGitHubRepositories } from '@/lib/github';
+import { getLeetCodeStats } from '@/lib/leetcode';
+import GitHubContributionGraph from '@/components/GitHubContributionGraph';
+import GitHubRepoList from '@/components/GitHubRepoList';
+import LeetCodeStatsCard from '@/components/LeetCodeStatsCard';
 
 export const metadata = {
   title: 'Engineering Activity — ' + portfolio.identity.name,
-  description: 'Integrated developer activity dashboard, GitHub contribution metrics, and LeetCode problem solving stats for ' + portfolio.identity.name,
+  description: 'Integrated developer activity dashboard, GitHub contribution metrics, and engineering practice for ' + portfolio.identity.name,
 };
 
-export default function ActivityPage() {
+export default async function ActivityPage() {
   const { identity } = portfolio;
+  const [stats, repos, leetcodeStats] = await Promise.all([
+    getGitHubStats('I-AM-A-PROGRAMER'),
+    getGitHubRepositories('I-AM-A-PROGRAMER'),
+    getLeetCodeStats(identity.alias || 'RiyoSup'),
+  ]);
 
   return (
     <div>
-      <p className="tech-label font-mono">Metrics & Integrations</p>
-      <h1>Engineering Activity</h1>
-      <p>Verifiable activity metrics across open source development and algorithmic practice.</p>
-
-      <section aria-labelledby="github-activity-heading" style={{ marginTop: '2.5rem' }}>
-        <h2 id="github-activity-heading">GitHub Activity</h2>
-        <p>
-          Primary Profile: <a href={identity.github} target="_blank" rel="noreferrer" className="font-mono">{identity.github}</a>
-        </p>
-        <div style={{ marginTop: '1rem' }}>
-          <h3>Public Repositories & Contributions</h3>
-          <p className="font-mono" style={{ color: 'var(--text-muted)' }}>
-            [Phase 4 Integration Target: Live GitHub GraphQL contribution graph, repository counts, language distribution, and commit history]
+      <div className="section-header">
+        <div>
+          <span className="tech-label font-mono">VERIFIABLE ACTIVITY</span>
+          <h1>Engineering Activity</h1>
+          <p>
+            Verifiable metrics across open source development, system repositories, and algorithmic practice.
           </p>
-          <ul>
-            <li>Profile & Repositories: <a href={identity.github} target="_blank" rel="noreferrer" className="font-mono">github.com/I-AM-A-PROGRAMER</a></li>
-          </ul>
         </div>
+      </div>
+
+      {/* GitHub Integration Section (DESIGN.md §13) */}
+      <section aria-labelledby="github-activity-heading" style={{ marginTop: '2.5rem' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: '0.5rem' }}>
+          <h2 id="github-activity-heading" style={{ marginBottom: 0 }}>GitHub Activity</h2>
+          <span className="font-mono stack-tag">
+            Profile: <a href={identity.github} target="_blank" rel="noreferrer">{identity.github}</a>
+          </span>
+        </div>
+
+        {/* Live Contribution Calendar Heatmap */}
+        <GitHubContributionGraph stats={stats} />
+
+        {/* Public Repositories List */}
+        <GitHubRepoList repos={repos} />
       </section>
 
       <hr />
 
+      {/* LeetCode Section (Kept subordinate and visually quieter per DESIGN.md §13 & RULES.md §5) */}
       <section aria-labelledby="leetcode-activity-heading">
-        <h2 id="leetcode-activity-heading">LeetCode Consistency & Practice</h2>
-        <p className="font-mono" style={{ color: 'var(--text-muted)' }}>
-          [Phase 5 Integration Target: Live LeetCode problem breakdown (Easy / Medium / Hard), active streak, and submission frequency]
-        </p>
-        <p>
-          <small>Note: LeetCode metrics provide supporting evidence of problem-solving practice and remain subordinate to project source code.</small>
-        </p>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: '0.5rem' }}>
+          <h2 id="leetcode-activity-heading" style={{ marginBottom: 0 }}>LeetCode Practice</h2>
+          <span className="font-mono stack-tag">
+            Subordinate Proof · Daily Cache
+          </span>
+        </div>
+
+        <LeetCodeStatsCard stats={leetcodeStats} />
       </section>
     </div>
   );
